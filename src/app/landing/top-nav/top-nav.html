@@ -1,0 +1,42 @@
+<div class="container top-nav">
+  <div class="row">
+    <div class="col">
+    <a class="logo" routerLink="/landing"><span>MYShop</span> Store </a>
+    </div>
+    <div class="col-md-6 d-none d-md-inline-block">
+    <div class="category-nav d-flex justify-content-between align-items-center">
+      <select class="form-select " aria-label="Default select example">
+        <option selected>All Cateogries</option>
+        <option value="1">men's clothing</option>
+        <option value="2">jewelery</option>
+        <option value="3">electronics</option>
+        <option value="3">women's clothing	</option>
+      </select>
+      <input type="text" class="form-control" placeholder="serach in Cateogries" aria-label="Search">
+      <a href="#"><fa-icon [icon]="faSearch"></fa-icon></a>
+    </div>
+    </div>
+    <div class="col">
+      <div class="icon-header d-flex justify-content-end align-items-center">
+        <div class="user-icon">
+          <a routerLink="/auth/login"><fa-icon [icon]="faUser"></fa-icon></a>
+        </div>
+        <div class="heart-icon  position-relative">
+          <a routerLink="#"><fa-icon [icon]="faHeart"></fa-icon></a>
+          <span class="badge bg-danger rounded-circle">3</span>
+          </div>
+        <div class="cart-icon  position-relative">
+          <a routerLink="#"><fa-icon [icon]="faCartShopping"></fa-icon></a>
+          <span class="badge bg-danger rounded-circle">5</span>
+        </div>
+         <div class="language-icon ">
+             <a routerLink="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"> <fa-icon [icon]="faLanguage" ></fa-icon></a>
+               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" routerLink="#">English</a></li>
+                <li><a class="dropdown-item" routerLink="#">Arabic</a></li>
+                </ul>
+            </div>
+      </div>
+    </div>
+  </div>
+  </div>

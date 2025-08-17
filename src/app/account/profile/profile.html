@@ -1,0 +1,62 @@
+<div class="profile-container account-container">
+  <div class="d-flex align-items-center gap-2 profile-header">
+    <img src="https://ui-avatars.com/api/?name=User+Name&background=0D8ABC&color=fff&size=100" class="rounded-circle mb-3" alt="User Avatar" width="100" height="100">
+   <div class="">
+     <h3 class="mb-1">User Name</h3>
+    <p class="text-muted mb-3"><i class="fa fa-envelope me-1"></i> useremail.com</p>
+   </div>
+  </div>
+  <div class="form-container mt-4">
+    <form class="row px-5" [formGroup]="profileForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="mb-3 col-md-6">
+        <label for="name" class="form-label">First Name</label>
+        <input type="text" id="name" class="form-control form-control-lg" formControlName="name">
+        <div *ngIf="submitted && f['name'].touched" class="text-danger">
+          <div *ngIf="f['name'].errors?.['required']">First name is required</div>
+          <div *ngIf="f['name'].errors?.['minlength']">First name must be at least 3 characters</div>
+        </div>
+      </div>
+      <div class="mb-3 col-md-6" >
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" id="lastname" class="form-control form-control-lg" formControlName="lastname">
+        <div *ngIf="submitted && f['lastname'].touched" class="text-danger">
+          <div *ngIf="f['lastname'].errors?.['required']">Last name is required</div>
+          <div *ngIf="f['lastname'].errors?.['minlength']">Last name must be at least 3 characters</div>
+        </div>
+      </div>
+      <div class="mb-3 col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-control form-control-lg" formControlName="email">
+        <div *ngIf="submitted && f['email'].touched" class="text-danger">
+          <div *ngIf="f['email'].errors?.['required']">Email is required</div>
+          <div *ngIf="f['email'].errors?.['email']">Invalid email format</div>
+        </div>
+      </div>
+      <div class="mb-3 col-md-6">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" id="phone" class="form-control form-control-lg" formControlName="phone">
+        <div *ngIf="submitted && f['phone'].touched" class="text-danger">
+          <div *ngIf="f['phone'].errors?.['required']">Phone is required</div>
+          <div *ngIf="f['phone'].errors?.['pattern']">Invalid phone number</div>
+        </div>
+      </div>
+      <div class="mb-3 col-md-6">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" class="form-control form-control-lg" formControlName="password">
+        <div *ngIf="submitted && f['password'].touched" class="text-danger">
+          <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+          <div *ngIf="f['password'].errors?.['minlength']">Password must be at least 6 characters</div>
+        </div>
+      </div>
+      <div class="mb-3 col-md-6">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" id="confirmPassword" class="form-control form-control-lg" formControlName="confirmPassword">
+        <div *ngIf="submitted && f['confirmPassword'].touched" class="text-danger">
+          <div *ngIf="f['confirmPassword'].errors?.['required']">Confirm password is required</div>
+          <div *ngIf="f['confirmPassword'].errors?.['notMatch']">Passwords do not match</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-lg w-100 mt-3" >Save Changes</button>
+    </form>
+  </div>
+</div>

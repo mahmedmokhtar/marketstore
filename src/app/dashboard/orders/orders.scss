@@ -1,0 +1,29 @@
+.orders-page {
+  padding: 24px;
+}
+.table-responsive{
+  .table {
+      color: #6C7E8D;
+      font-size: 14px;
+    a{
+    color:#FF8716 !important;
+  }
+  .crud-order{
+    a {
+      color: #fff !important;
+    }
+  }
+  }
+
+
+}
+.pagination{
+  a{
+    color: #FF8716 !important;
+  :hover{
+      background-color: #FF8716 !important;
+      color: #fff !important;
+    }
+
+  }
+}

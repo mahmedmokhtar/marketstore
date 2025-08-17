@@ -1,0 +1,170 @@
+<div class="dashboard-container">
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 d-flex gap-2 align-items-center">
+         <button class="btn" (click)="sidenavToggle()" data-bs-toggle="collapse" href="#collapsidenav" role="button" aria-expanded="false" aria-controls="collapsidenav"><fa-icon [icon]="faBars"></fa-icon> </button>
+           <div >overview</div>
+        </div>
+        <div class="col-md-6">
+           <div class="form form-header d-none d-lg-block">
+                <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"><fa-icon [icon]="faSearch"></fa-icon></span>
+                <input type="search" class="form-control" placeholder="search ..." aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              </div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="dashboard-icon">
+            <div class="nav-icon">
+              <fa-icon [icon]="faLanguage" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></fa-icon>
+               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">Arabic</a></li>
+                </ul>
+            </div>
+            <div class="nav-icon">
+              <fa-icon [icon]="fabell" id="dropdownnative" data-bs-toggle="dropdown" aria-expanded="false"></fa-icon>
+                 <div class="dropdown-menu notification-menu" aria-labelledby="dropdownnative">
+                  <div class="notification">
+                    <div class="not-head d-flex border-bottom justify-content-between">
+                        <h6>Notifications</h6>
+                        <a href="#">clear all</a>
+                    </div>
+                    <div class="not-body">
+                      @for (item of notiflist; track $index) {
+                        <div class="d-flex align-items-center my-2 ">
+                          <div class="flex-shrink-0">
+                            <img src="{{item.notimg}}" alt="img-notivaction" width="30px" height="30px">
+                          </div>
+                          <div class="flex-grow-1 ms-3 media-body">
+                            <h6>{{item.title}}</h6>
+                            <p>{{item.des}}</p>
+                          </div>
+                        </div>
+                      }
+                    </div>
+                    <div class="not-footer text-center border-top py-2">
+                      <button class="btn">View all notifications</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="nav-icon">
+              <fa-icon [icon]="faCog" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></fa-icon>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="d-flex align-items-center bg btn p-3 offcanvas-header">
+                  <h5 class="text-white m-0">Theme Settings</h5>
+                  <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body p-0">
+                <div data-simplebar="init" class="h-100"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px;">
+                    <div class="p-3 settings-bar">
+
+                          <div>
+                              <h5 class="mb-3 font-16 fw-semibold">Color Scheme</h5>
+
+                              <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="data-bs-theme" id="layout-color-light" value="light">
+                                    <label class="form-check-label" for="layout-color-light">Light</label>
+                              </div>
+
+                              <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="data-bs-theme" id="layout-color-dark" value="dark">
+                                    <label class="form-check-label" for="layout-color-dark">Dark</label>
+                              </div>
+                          </div>
+
+                          <div>
+                              <h5 class="my-3 font-16 fw-semibold">Topbar Color</h5>
+
+                              <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="data-topbar-color" id="topbar-color-light" value="light">
+                                    <label class="form-check-label" for="topbar-color-light">Light</label>
+                              </div>
+                              <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="data-topbar-color" id="topbar-color-dark" value="dark">
+                                    <label class="form-check-label" for="topbar-color-dark">Dark</label>
+                              </div>
+                          </div>
+
+
+                          <div>
+                              <h5 class="my-3 font-16 fw-semibold">Menu Color</h5>
+
+                              <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="data-menu-color" id="leftbar-color-light" value="light">
+                                    <label class="form-check-label" for="leftbar-color-light">
+                                        Light
+                                    </label>
+                              </div>
+
+                              <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="data-menu-color" id="leftbar-color-dark" value="dark">
+                                    <label class="form-check-label" for="leftbar-color-dark">
+                                        Dark
+                                    </label>
+                              </div>
+                          </div>
+
+                          <div>
+                              <h5 class="my-3 font-16 fw-semibold">Sidebar Size</h5>
+
+                              <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="data-menu-size" id="leftbar-size-default" value="default">
+                                    <label class="form-check-label" for="leftbar-size-default">
+                                        Default
+                                    </label>
+                              </div>
+
+                              <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="data-menu-size" id="leftbar-size-small" value="condensed">
+                                    <label class="form-check-label" for="leftbar-size-small">
+                                        Condensed
+                                    </label>
+                              </div>
+
+                              <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="data-menu-size" id="leftbar-hidden" value="hidden">
+                                    <label class="form-check-label" for="leftbar-hidden">
+                                        Hidden
+                                    </label>
+                              </div>
+
+                              <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="data-menu-size" id="leftbar-size-small-hover-active" value="sm-hover-active">
+                                    <label class="form-check-label" for="leftbar-size-small-hover-active">
+                                        Small Hover Active
+                                    </label>
+                              </div>
+
+                              <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="data-menu-size" id="leftbar-size-small-hover" value="sm-hover">
+                                    <label class="form-check-label" for="leftbar-size-small-hover">
+                                        Small Hover
+                                    </label>
+                              </div>
+                          </div>
+
+                    </div>
+                </div></div></div></div><div class="simplebar-placeholder" style="width: auto; height: 609px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 25px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+                </div>
+                </div>
+            </div>
+            <div class="nav-icon">
+              <fa-icon [icon]="faUser" data-bs-toggle="dropdown" aria-expanded="false"></fa-icon>
+              <ul class="dropdown-menu mt-3">
+                <li><a class="dropdown-item" routerLink="/account/profile">Profile</a></li>
+                <li><a class="dropdown-item" routerLink="/account">Account</a></li>
+                <li><a class="dropdown-item" routerLink="/account/logout"> logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </header>
+  </div>

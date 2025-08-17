@@ -1,0 +1,15 @@
+<div class="dashboard-container">
+  <div class="sidenav" id="collapsidenav" [ngClass]="{'collapse' : sidenavstatus}">
+    <div class="side-logo d-flex justify-content-between">
+      <h5>myshop store</h5>
+    </div>
+    <div class="sidenav-list">
+      <ul>
+        <li><a routerLink="dash-layout">dashboard</a></li>
+        @for (link of listside; track $index) {
+          <li><a [routerLink]="link">{{link}}</a></li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

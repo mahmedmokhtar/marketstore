@@ -1,0 +1,94 @@
+<div class="auth-module">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center mb-2">
+        <p>welcome to MYshop Store</p>
+        <h2>Register to Your Account</h2>
+      </div>
+      <div class="col-md-12">
+        <form [formGroup]="resighterForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="mb-2">
+            <label for="name" class="form-label">Name : </label>
+            <input
+              type="text" id="name" class="form-control form-control-lg" formControlName="name"  />
+            <div *ngIf="resighter['name'].touched ||submitted " class="text-danger" >
+              <div *ngIf="resighter['name'].errors?.['required']">
+                The name is required
+              </div>
+              <div *ngIf="resighter['name'].errors?.['minlength']">
+                The name must be at least 3 characters long
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <label for="email" class="form-label">Email :</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control form-control-lg"
+              formControlName="email"
+            />
+            <div
+              *ngIf="resighter['email'].touched ||submitted  "
+              class="text-danger"
+            >
+              <div *ngIf="resighter['email'].errors?.['required']">
+               The email is required
+              </div>
+              <div *ngIf="resighter['email'].errors?.['email']">
+                The email must be in the format "&#64;example.com"
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <label for="password" class="form-label">Password:</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control form-control-lg"
+              formControlName="password"
+            />
+            <div
+              *ngIf="resighter['password'].touched || submitted"
+              class="text-danger"
+            >
+              <div *ngIf="resighter['password'].errors && resighter['password'].errors?.['required']">
+                The password is required
+              </div>
+              <div
+                *ngIf="resighter['password'].errors && resighter['password'].errors?.['minlength']">
+                The password must be at least 6 characters long
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <label for="confirmPassword" class="form-label">Confirm Password :</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              class="form-control form-control-lg"
+              formControlName="confirmPassword"
+            />
+            <div *ngIf="resighter['confirmPassword'].touched || submitted" class="text-danger">
+              <div *ngIf="resighter['confirmPassword'].errors?.['required']">
+                The confirm password is required
+              </div>
+              <div *ngIf="resighter['confirmPassword'].errors?.['notMatch']">
+                The passwords do not match
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn w-100 btn-lg mt-3" [disabled]="resighterForm.invalid">Register now </button>
+           <div class="mt-2">
+            <span class="me-2"> have an account ?</span>
+            <a routerLink="/auth/login" class="text-primary">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

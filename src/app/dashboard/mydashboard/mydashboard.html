@@ -1,0 +1,13 @@
+<div class="dashboard-container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 position-relative">
+        <app-dashboard-sidenav></app-dashboard-sidenav>
+      </div>
+      <div class="col-md-10">
+       <app-dashboard-header (sidenavToggled)="sidenavstauts = $event"></app-dashboard-header>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
