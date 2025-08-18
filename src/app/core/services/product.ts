@@ -12,5 +12,8 @@ export class Product {
   getall(){
   return  this.http.get(environment.apiUrl + "products")
   }
+  getproduct(id:any){
+    return this.http.get(environment.apiUrl + "products/" + id)
+  }
 
 }
