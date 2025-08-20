@@ -1,0 +1,8 @@
+<div class="row">
+  @for (item of data; track $index) {
+    <div class="col-md-3">
+      <app-product [data]="item" (addToCart)="addTocart(item)"></app-product>
+      </div>
+    }
+
+</div>

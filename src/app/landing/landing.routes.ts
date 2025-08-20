@@ -2,7 +2,7 @@ import { Products } from './products/products';
 import { Route } from "@angular/router";
 import { MyShop } from "./my-shop/my-shop";
 import { About } from "./about/about";
-import { ProductDetails } from './products/product.details/product.details';
+
 
 export const LANDING_ROUTES: Route[] = [
     {  path: 'landing',
@@ -14,7 +14,7 @@ export const LANDING_ROUTES: Route[] = [
         },
         {path:"about" , component:About},
         {path:"products" , component:Products},
-        {path:"detail" , component:ProductDetails}
+
       ]
     }
 ]
