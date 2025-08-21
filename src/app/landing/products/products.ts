@@ -1,9 +1,8 @@
-
 import { Component } from '@angular/core';
 import { Product } from '../../core/services/product';
 import { SHARED } from '../../shared/shared';
 import { MyProduct } from './product/product';
-
+import * as toastr from 'toastr';
 @Component({
   selector: 'app-products',
   imports: [SHARED, MyProduct ],
@@ -28,17 +27,17 @@ export class Products {
       this.allcart= JSON.parse(localStorage.getItem("cart") || "[]");
       let index = this.allcart.find((i:any)=> i.id == items.id);
       if(index){
-          window.alert('this product in cart already');
+          toastr.error("This product is already in the cart");
       }else{
         this.allcart.push(items);
         localStorage.setItem("cart",JSON.stringify(this.allcart));
-        window.alert('add thid product in cart success');
+        toastr.success('Product added to cart successfully');
       }
     }else{
 
       this.allcart.push(items);
       localStorage.setItem("cart",JSON.stringify(this.allcart));
-      window.alert('add thid product in cart success');
+      toastr.success('Product added to cart successfully');
     }
   }
 }

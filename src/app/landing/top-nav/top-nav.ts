@@ -11,9 +11,17 @@ import { SHARED } from '../../shared/shared';
   styleUrl: './top-nav.scss'
 })
 export class TopNav {
+  cartItems:any= []
 faHeart = faHeart;
 faCartShopping = faCartShopping;
 faSearch = faSearch;
 faUser = faUser;
-faLanguage = faLanguage
+faLanguage = faLanguage;
+ngOnInit(){
+  if("cart" in localStorage){
+    this.cartItems = JSON.parse(localStorage.getItem("cart") || "[]");
+
+}
+
+}
 }

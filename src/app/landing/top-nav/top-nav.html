@@ -26,8 +26,8 @@
           <span class="badge bg-danger rounded-circle">3</span>
           </div>
         <div class="cart-icon  position-relative">
-          <a routerLink="#"><fa-icon [icon]="faCartShopping"></fa-icon></a>
-          <span class="badge bg-danger rounded-circle">5</span>
+          <a routerLink="/landing/carts"><fa-icon [icon]="faCartShopping"></fa-icon></a>
+          <span class="badge bg-danger rounded-circle">{{cartItems.length}}</span>
         </div>
          <div class="language-icon ">
              <a routerLink="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"> <fa-icon [icon]="faLanguage" ></fa-icon></a>
