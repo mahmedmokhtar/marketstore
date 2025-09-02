@@ -15,5 +15,10 @@ export class Product {
   getproduct(id:any){
     return this.http.get(environment.apiUrl + "products/" + id)
   }
-
+  addproduct(model:any){
+    return this.http.post(environment.apiUrl + "products", model)
+  }
+  deleteproduct(id:any){
+    return this.http.delete(environment.apiUrl + "products/" + id)
+  }
 }

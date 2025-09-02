@@ -10,17 +10,18 @@ import * as toastr from 'toastr';
   styleUrl: './products.scss'
 })
 export class Products {
-  data:any =[]
   allcart:any = [];
+  data:any =[]
+  fdata:any =[]
   constructor(private productService: Product ) {
 
   }
   ngOnInit(){
     this.getAlProduct()
+
   }
   getAlProduct(){
     this.productService.getall().subscribe(item=> this.data = item);
-
   }
   addTocart(items:any){
     if("cart" in localStorage){
@@ -40,4 +41,5 @@ export class Products {
       toastr.success('Product added to cart successfully');
     }
   }
+
 }

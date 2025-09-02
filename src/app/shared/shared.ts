@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
+
 // If you have providers, add them to SHARED, otherwise you can remove SHARED or keep it empty.
 export const SHARED: Provider[] = [
     CommonModule,
@@ -17,5 +18,9 @@ export const SHARED: Provider[] = [
   ReactiveFormsModule,
   TranslateModule,
   FontAwesomeModule,
+
+
+
+
 ];
 
