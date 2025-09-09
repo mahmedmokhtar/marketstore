@@ -1,0 +1,32 @@
+
+.card{
+  margin: 20px auto;
+ img{
+
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin :20px auto 0px;
+ }
+  .card-body{
+    text-align: center;
+    .card-title{
+      font-weight: 600;
+      font-size: 18px;
+      color: #000;
+    }
+    .card-text{
+      font-size: 14px;
+      color: #777;
+      line-height: 24px;
+    }
+
+  }
+}
+.ng-fa-icon{
+  width: 16px;
+  height: 16px;
+  color: #ffb400;
+  margin: 0px 2px;
+}

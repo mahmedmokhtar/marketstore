@@ -21,4 +21,7 @@ export class Product {
   deleteproduct(id:any){
     return this.http.delete(environment.apiUrl + "products/" + id)
   }
+  updateProduct(id:any){
+    return this.http.put(environment.apiUrl+'products/',id)
+  }
 }

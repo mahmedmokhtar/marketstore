@@ -1,4 +1,4 @@
-import { faEye, faLightbulb, faShuffle, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faLightbulb, faPlay, faShuffle, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { Component } from '@angular/core';
 import { SHARED } from '../../../shared/shared';
 
@@ -11,5 +11,5 @@ import { SHARED } from '../../../shared/shared';
 
 })
 export class  myServices {
-faEye=faEye; fatroohy=faTrophy;falightbulb = faLightbulb;fashuffle=faShuffle
+faEye=faEye; fatroohy=faTrophy;falightbulb = faLightbulb;fashuffle=faShuffle; faplay=faPlay
 }

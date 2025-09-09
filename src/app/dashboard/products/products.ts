@@ -66,4 +66,19 @@ export class ProductsComponent {
       this.getallpro();
     })
   }
+  updatepro(item:any){
+    this.formprod.get('title')?.setValue(item.title)
+    this.formprod.get('price')?.setValue(item.price)
+    this.formprod.get('description')?.setValue(item.description)
+    this.formprod.get('category')?.setValue(item.category)
+    this.imageUrl = item.image
+
+  }
+  doneupdate(){
+const model = this.formprod.value
+  this.proserv.updateProduct(model.id).subscribe ((res:any)=>{
+    toastr.success('Product added to  successfully');
+    this.getallpro();
+  })
+  }
 }

@@ -126,8 +126,56 @@
                         <td>
                           <div class="d-flex gap-2">
                                 <a routerLink="/dashboard/prodetalis/{{item.id}}" class="btn btn-light btn-sm"><fa-icon [icon]="faEye"></fa-icon></a>
-                                <a href="#!" class="btn btn-soft-primary btn-sm"><fa-icon [icon]="faEdit"></fa-icon></a>
+                                <button data-bs-toggle="modal" data-bs-target= "#exampleModal2" class="btn btn-soft-primary btn-sm" (click)="updatepro(item)"><fa-icon [icon]="faEdit"></fa-icon></button>
                                 <button class="btn btn-soft-danger btn-sm" (click)="deleteproduct(item.id)"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
+                                <!--modal-->
+                                <div class="modal fade modal-lg" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="row" [formGroup]="formprod">
+
+                      <div class="mb-3 col-md-6">
+                        <label for="title" class="form-label">Product Title</label>
+                        <input type="text" class="form-control" formControlName="title" id="title" aria-describedby="titleHelp">
+                      </div>
+                      <div class="mb-3 col-md-6">
+                        <label for="price" class="form-label">Product Price</label>
+                        <input type="number" class="form-control"  formControlName="price" id="price">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Product Description</label>
+                        <textarea class="form-control" formControlName="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Product Category</label>
+                        <select class="form-select" aria-label="Default select example" formControlName="category">
+                          <option value="men's clothing">men's clothing</option>
+                          <option value="jewelery">jewelery</option>
+                          <option value="electronics">electronics</option>
+                          <option value="women's clothing">women's clothing</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="formFile" class="form-label">Default file input example</label>
+                        <input class="form-control" type="file" formControlName="image" id="formFile" (change)="getimagepath($event)">
+                      </div>
+                      <div class="mb-3">
+                        <img [src]="imageUrl" alt="" class="img-responsive" height="100px" width="120px">
+                      </div>
+                      <button type="submit" class="btn btn-primary" (click)=" doneupdate()" >Update Product</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
                           </div>
                         </td>
                     </tr>
