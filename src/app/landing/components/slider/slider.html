@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="col-md-9">
+    <!--slider-->
+    <swiper-container
+
+      [slidesPerView]="1"
+       [spaceBetween]="10"
+      [loop]="true"
+      [navigation]="true"
+      centered-slides="true"
+
+      (swiperprogress)="onProgress($any($event))"
+      (swiperslidechange)="onSlideChange()">
+        <swiper-slide >
+         <div class="slider-inner">
+           <img src="assets/img/product/banner_home1.png" alt="slider">
+           <div class="slider-text">
+            <h2>Digital slr camera <br> high defination</h2>
+            <p>sumptuous , filling and tempting</p>
+            <p>from <span>$180.00</span></p>
+            <button class="btn">shop now </button>
+           </div>
+         </div>
+        </swiper-slide>
+        <swiper-slide >
+           <div class="slider-inner">
+           <img src="assets/img/product/banner_home2.png" alt="slider">
+           <div class="slider-text">
+            <h2>Digital slr camera <br> high defination</h2>
+            <p>sumptuous , filling and tempting</p>
+            <p>from <span>$180.00</span></p>
+            <button class="btn">shop now </button>
+           </div>
+         </div>
+        </swiper-slide>
+    </swiper-container>
+    <!-- slider-->
+  </div>
+  <div class="col-md-3">
+    <div class="">
+        <img src="assets/img/product/banner_home3.png" alt="slider" height="390px">
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="inner-box">
+      <img src="assets/img/product/banner3_1.png" alt="banner3_1">
+      <div>
+        <h6>break disc deals on this <span>70 %</span></h6>
+        <a routerLink="/landing/products">shop now</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="inner-box">
+      <img src="assets/img/product/banner3_2.png" alt="banner3_1">
+      <div>
+        <h6>break disc deals on this <span>70 %</span></h6>
+        <a routerLink="/landing/products">shop now</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="inner-box">
+      <img src="assets/img/product/banner3_3.png" alt="banner3_1">
+      <div>
+        <h6>break disc deals on this <span>70 %</span></h6>
+        <a routerLink="/landing/products">shop now</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="inner-box">
+      <img src="assets/img/product/banner3_4.png" alt="banner3_1">
+      <div>
+        <h6>break disc deals on this <span>70 %</span></h6>
+        <a routerLink="/landing/products">shop now</a>
+      </div>
+    </div>
+  </div>
+</div>

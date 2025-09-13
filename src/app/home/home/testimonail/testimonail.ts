@@ -1,8 +1,7 @@
 import { faPlay, faStar } from '@fortawesome/free-solid-svg-icons';
 import { SHARED } from './../../../shared/shared';
 import { SwiperContainer } from 'swiper/element';
-import { Component , CUSTOM_ELEMENTS_SCHEMA,ViewChild} from '@angular/core';
-import { register } from 'swiper/element/bundle';
+import { Component , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { Swiper } from 'swiper/types';
 
 
